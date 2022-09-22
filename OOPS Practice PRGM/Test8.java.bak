@@ -1,0 +1,36 @@
+class C
+{
+}
+class D extends C
+{
+}
+class E extends D
+{
+	void m1(C arg){
+		System.out.println("m1(C) in E");
+	}
+	void m1(D arg){
+		System.out.println("m1(D)in E");
+	}
+}
+
+
+class F extends E
+{
+	void m1(C arg){
+		System.out.println("m1(C) in F");
+	}
+	void m1(D arg){
+		System.out.println("m1(D)in F");
+	}
+}
+
+class Test8
+{
+	public static void main(String[] args) 
+	{
+		C c1=new D();
+		E e1=new F();
+		e1.m1();
+	}
+}
